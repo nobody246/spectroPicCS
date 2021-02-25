@@ -24,15 +24,13 @@ pxMultiple: The multiple for a Y coordinate that meets threshold criteria in the
 
 rotationOrientation: The number of times for imlib2 to rotate the input image. It is the parameter of the image-orientate command.
 
-negative: 0 or 1 (default). If 1 then include only pixels in input image whose combined total RGB values are less than or equal to the threshold,
-
-if 0 then those with greater than or equal combined totals to the threshold.
+negative: 0 or 1 (default). If 1 then include only pixels in input image whose combined total RGB values are less than or equal to the threshold,if 0 then those with greater than or equal combined totals to the threshold.
 
 
 
 
 
-**Example
+**Example**
 
 
 Same general idea as my spectropic project in python. In goes an image file, out comes a wav file containing the image to be viewed via spectrogram.

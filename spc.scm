@@ -1,3 +1,5 @@
+;Spectropic (c) 2020 Alex S. a.se8seven (a) g...m
+;GNU Public License v2
 (use sndfile imlib2)
 (define cli-args (command-line-arguments))
 (include "cli.scm")

@@ -18,7 +18,9 @@
    "threshold: the minimum combined added total of the RGB values of a pixel for said pixel to be transferred to the output wav file.\n"
    "duration: duration of wav file 'pixel' at any given Y coordinate that meets threshold criteria along the X axis.\n"
    "pxMultiple: The multiple for a Y coordinate that meets threshold criteria in the output wav file.\n"
-   "rotationOrientation: The number of times for imlib2 to rotate the input image. It is the parameter of the image-orientate command.\n")
+   "rotationOrientation: The number of times for imlib2 to rotate the input image. It is the parameter of the image-orientate command.\n"
+   "negative: 0 or 1 (default). If 1 then include only pixels in input image whose combined total RGB values are less than or equal to the threshold,\n"
+   "if 0 then those with greater than or equal combined totals to the threshold.\n")
   (exit))
 (define (parse-cli args)
   (when (not (null? args))

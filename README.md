@@ -38,11 +38,11 @@ Same general idea as my spectropic project in python. In goes an image file, out
 
 EX. for b.png being processed into b_output_negative_0.png and b_output_negative_1.png respectively
 
-csi spc.scm negative 0 infile "b.png" volume .05 pxMultiple 10
+csi spc.scm negative 0 infile "b.png" volume .05 
 
 and
 
-csi spc.scm negative 1 infile "b.png" volume .05 pxMultiple 10
+csi spc.scm negative 1 infile "b.png" volume .05 
 
 
 

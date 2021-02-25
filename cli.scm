@@ -1,3 +1,5 @@
+;Spectropic (c) 2020 Alex S. a.se8seven (a) g...m
+;GNU Public License v2
 (define expected-args
   '(samps-per-sec infile outfile chans volume duration pxMultiple threshold rotationOrientation negative))
 (define current-arg '())

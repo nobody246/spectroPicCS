@@ -32,6 +32,8 @@ if 0 then those with greater than or equal combined totals to the threshold.
 
 
 
+**Example
+
 
 Same general idea as my spectropic project in python. In goes an image file, out comes a wav file containing the image to be viewed via spectrogram.
 

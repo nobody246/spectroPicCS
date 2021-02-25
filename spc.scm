@@ -41,7 +41,7 @@
         (append f-list `(,(* y pixel-multiple)))))
     (if (< y (sub1 imgh))
         (r (add1 y) f-list)
-        (append '(1) f-list))))
+        (append '(0) f-list))))
 (define (make-wav w h #!optional (c 0))
   (set-current-freqs (process-img c))
   (let r ((a 0))

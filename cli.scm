@@ -9,9 +9,9 @@
   (print "GNU Public License v2")
   (print "=======USAGE:=========")
   (print
-   "csi spc.scm [samps-per-sec ## in-file foo out-file bar chans # volume .## duration # pxMultiple #]\n"
-   "in-file: image file for input\n"
-   "out-file: wav file for output\n"
+   "csi spc.scm [samps-per-sec ## infile foo outfile bar chans # volume .## duration # pxMultiple #]\n"
+   "infile: image file for input\n"
+   "outfile: wav file for output\n"
    "chans: channels in wav file\n"
    "volume: volume (<=1.0) for output sound\n"
    "samps-per-sec: samples per second in generated wav file (default 11025)\n"

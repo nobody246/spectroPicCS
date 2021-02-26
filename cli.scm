@@ -1,7 +1,7 @@
 ;Spectropic (c) 2020 Alex S. a.se8seven (a) g...m
 ;GNU Public License v2
 (define expected-args
-  '(samps-per-sec in-file out-file chans volume duration px-multiple threshold rotation-orientation negative))
+  '(samps-per-sec in-file out-file volume duration px-multiple threshold rotation-orientation negative))
 (define current-arg '())
 (define argc (length cli-args))
 (define (usage)
@@ -12,7 +12,6 @@
    "csi spc.scm [samps-per-sec ## in-file foo out-file bar chans # volume .## duration # px-multiple # threshold # rotation-orientation #]\n"
    "in-file: image file for input\n"
    "out-file: wav file for output\n"
-   "chans: channels in wav file\n"
    "volume: volume (<=1.0) for output sound\n"
    "samps-per-sec: samples per second in generated wav file (default 11025)\n"
    "threshold: the minimum combined added total of the RGB values of a pixel for said pixel to be transferred to the output wav file.\n"
@@ -43,8 +42,8 @@
                  (set! in-file arg))
                 ((eq? current-arg 'out-file)
                  (set! out-file arg))
-                ((and (eq? current-arg 'chans) (number? arg-num))
-                 (set! chans arg-num))
+                ;((and (eq? current-arg 'chans) (number? arg-num))
+                ; (set! chans arg-num))
                 ((and (eq? current-arg 'volume) (number? arg-num))
                  (set! volume arg-num))
                 ((and (eq? current-arg 'duration) (number? arg-num))

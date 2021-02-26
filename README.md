@@ -11,8 +11,6 @@ in-file: image file for input
 
 out-file: wav file for output
 
-chans: channels in wav file
-
 volume: volume (<=1.0) for output sound
 
 samps-per-sec: samples per second in generated wav file (default 11025)

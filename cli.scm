@@ -1,7 +1,7 @@
 ;Spectropic (c) 2020 Alex S. a.se8seven (a) g...m
 ;GNU Public License v2
 (define expected-args
-  '(samps-per-sec infile outfile chans volume duration pxMultiple threshold rotationOrientation negative))
+  '(samps-per-sec in-file out-file chans volume duration px-multiple threshold rotation-orientation negative))
 (define current-arg '())
 (define argc (length cli-args))
 (define (usage)
@@ -9,18 +9,19 @@
   (print "GNU Public License v2")
   (print "=======USAGE:=========")
   (print
-   "csi spc.scm [samps-per-sec ## infile foo outfile bar chans # volume .## duration # pxMultiple #]\n"
-   "infile: image file for input\n"
-   "outfile: wav file for output\n"
+   "csi spc.scm [samps-per-sec ## in-file foo out-file bar chans # volume .## duration # px-multiple # threshold # rotation-orientation #]\n"
+   "in-file: image file for input\n"
+   "out-file: wav file for output\n"
    "chans: channels in wav file\n"
    "volume: volume (<=1.0) for output sound\n"
    "samps-per-sec: samples per second in generated wav file (default 11025)\n"
    "threshold: the minimum combined added total of the RGB values of a pixel for said pixel to be transferred to the output wav file.\n"
    "duration: duration of wav file 'pixel' at any given Y coordinate that meets threshold criteria along the X axis.\n"
-   "pxMultiple: The multiple for a Y coordinate that meets threshold criteria in the output wav file.\n"
-   "rotationOrientation: The number of times for imlib2 to rotate the input image. It is the parameter of the image-orientate command.\n"
+   "px-multiple: The multiple for a Y coordinate that meets threshold criteria in the output wav file.\n"
+   "rotation-orientation: The number of times for imlib2 to rotate the input image. It is the parameter of the image-orientate command.\n"
    "negative: 0 or 1 (default). If 1 then include only pixels in input image whose combined total RGB values are less than or equal to the threshold,\n"
-   "if 0 then those with greater than or equal combined totals to the threshold.\n")
+   "if 0 then those with greater than or equal combined totals to the threshold.\n"
+   "=============================")
   (exit))
 (define (parse-cli args)
   (when (not (null? args))
@@ -38,9 +39,9 @@
 	    (set! current-arg (string->symbol param-name)))
 	  (cond ((and (eq? current-arg 'samps-per-sec) (number? arg-num))
 		 (set! s-per-sec arg-num))
-                ((eq? current-arg 'infile)
+                ((eq? current-arg 'in-file)
                  (set! in-file arg))
-                ((eq? current-arg 'outfile)
+                ((eq? current-arg 'out-file)
                  (set! out-file arg))
                 ((and (eq? current-arg 'chans) (number? arg-num))
                  (set! chans arg-num))
@@ -48,11 +49,11 @@
                  (set! volume arg-num))
                 ((and (eq? current-arg 'duration) (number? arg-num))
                  (set! duration arg-num))
-                ((and (eq? current-arg 'pxMultiple) (number? arg-num))
+                ((and (eq? current-arg 'px-multiple) (number? arg-num))
                  (set! pixel-multiple arg-num))
                 ((and (eq? current-arg 'threshold) (number? arg-num))
                  (set! threshold arg-num))
-                ((and (eq? current-arg 'rotationOrientation) (number? arg-num))
+                ((and (eq? current-arg 'rotation-orientation) (number? arg-num))
                  (set! orient arg-num))
                 ((eq? current-arg 'negative)
                  (if (equal? arg "1")

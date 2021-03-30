@@ -28,9 +28,7 @@
 (define lst '())
 (define (set-current-freqs args)
   (set! lst
-    (map (lambda (x)
-           (precalc-wave-part x))
-         args)))
+    (map precalc-wave-part args)))
 (define (process-img x)
   (let r ((y 0)
           (f-list '()))

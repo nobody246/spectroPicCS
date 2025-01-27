@@ -3,6 +3,13 @@ Spectropic (c) 2020 Alex S. a.se8seven (a) g...m
 
 GNU Public License v2
 
+=======INSTALL PREREQUISITES:========
+
+1. Install Chicken Scheme
+
+2. run: `sudo chicken-install imlib2 sndfile`
+
+
 =======USAGE:=========
 
 csi spc.scm [samps-per-sec ## in-file foo out-file bar chans # volume .## duration # px-multiple # threshold # rotation-orientation #]
